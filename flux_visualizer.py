@@ -1,8 +1,8 @@
 from typing import List, Union
 
 import matplotlib
-from torch import Tensor
 from matplotlib import pyplot as plt
+from torch import Tensor
 
 
 def show_planar_flux(image: Union[Tensor, List[Tensor]]):
@@ -31,4 +31,3 @@ def show_planar_flux(image: Union[Tensor, List[Tensor]]):
     fig.set_dpi(100)
     plt.show()
     return fig, ax, image_handle
-

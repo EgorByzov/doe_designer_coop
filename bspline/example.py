@@ -1,6 +1,5 @@
-import numpy as np
-import torch
 import matplotlib
+import torch
 
 from bspline.spline2_eval import spline2_eval
 from bspline.spline2_fit import spline2_fit
@@ -11,15 +10,19 @@ import matplotlib.pyplot as plt
 degree = 3
 errAbs = 0.05
 
+
 def err(s, a, b):
     return a + (b - a) * torch.rand(s)
 
+
 def f(x, y):
     # return torch.cos(10 * (x**2 + y)) * torch.sin(10 * (x + y**2))
-    return x**2 + y**2
+    return x ** 2 + y ** 2
+
 
 def f_err(x, y):
     return f(x, y) + err(x.shape[0], -errAbs / 2, errAbs / 2).reshape(x.size())
+
 
 xMin = -1
 xMax = 1
@@ -62,5 +65,4 @@ plt.show()
 
 # Stat
 aver = torch.sum(z) / (nx * ny)
-rrmse = torch.sqrt(torch.sum((z - z_fit)**2) / (nx * ny)) / aver * 100
-
+rrmse = torch.sqrt(torch.sum((z - z_fit) ** 2) / (nx * ny)) / aver * 100

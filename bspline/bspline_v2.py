@@ -1,5 +1,6 @@
 import torch
 
+
 def bspline_v2(x: torch.Tensor, jmax, d, t):
     cur_f = x.new_zeros(x.numel(), jmax + d)
     t = t.flatten()
@@ -40,4 +41,3 @@ def bspline_v2(x: torch.Tensor, jmax, d, t):
     #     df = d * df
 
     return f, df
-

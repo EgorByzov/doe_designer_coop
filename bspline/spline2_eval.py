@@ -22,11 +22,11 @@ def spline2_eval(x, y, c, d, knots_x, knots_y):
 
     xmin = knots_x[0]
     xmax = knots_x[-1]
-    tx = torch.cat((x.new_full((1, d), xmin), knots_x.view(1,-1), x.new_full((1, d), xmax)), dim=1)
+    tx = torch.cat((x.new_full((1, d), xmin), knots_x.view(1, -1), x.new_full((1, d), xmax)), dim=1)
 
     ymin = knots_y[0]
     ymax = knots_y[-1]
-    ty = torch.cat((x.new_full((1, d), ymin), knots_y.view(1,-1), x.new_full((1, d), ymax)), dim=1)
+    ty = torch.cat((x.new_full((1, d), ymin), knots_y.view(1, -1), x.new_full((1, d), ymax)), dim=1)
 
     nc_x = len(knots_x) + d - 1
     nc_y = len(knots_y) + d - 1
@@ -41,4 +41,3 @@ def spline2_eval(x, y, c, d, knots_x, knots_y):
         z = z.view(x_size)
 
     return z
-

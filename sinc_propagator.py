@@ -9,6 +9,7 @@ from torch import Tensor
 torch_complex_float_type = torch.complex64
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+
 def propagation_sinc_prepare(field_shape: Tuple[int, int], side_length: float, wavenumber: float,
                              propagation_dist: float) -> Dict:
     """
