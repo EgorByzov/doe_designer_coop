@@ -1,12 +1,12 @@
 import numpy as np
 import torch
 import matplotlib
+
+from bspline.spline2_eval import spline2_eval
+from bspline.spline2_fit import spline2_fit
+
 matplotlib.use('QtAgg')
 import matplotlib.pyplot as plt
-
-# Setup
-from spline2_eval import spline2_eval
-from spline2_fit import spline2_fit
 
 degree = 3
 errAbs = 0.05

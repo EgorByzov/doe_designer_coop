@@ -4,8 +4,8 @@ import torch
 from torch import Tensor
 from torch.nn import Module, Softmax, Parameter, ParameterList
 
-from .bspline.layered_bspline import LayeredBSpline
-from .sinc_propagator import propagation_sinc_prepare, propagation_sinc
+from bspline.layered_bspline import LayeredBSpline
+from sinc_propagator import propagation_sinc_prepare, propagation_sinc
 
 
 class LayeredDOE(Module):

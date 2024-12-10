@@ -1,6 +1,6 @@
 import torch
 
-from bspline_v2 import bspline_v2
+from bspline.bspline_v2 import bspline_v2
 
 
 def spline2_fit(x, y, z, d, knots_x, knots_y, lambda_param=0):

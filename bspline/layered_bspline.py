@@ -2,7 +2,7 @@ from typing import List
 
 from torch import Tensor
 
-from spline2_eval import spline2_eval
+from bspline.spline2_eval import spline2_eval
 
 
 class LayeredBSpline:
