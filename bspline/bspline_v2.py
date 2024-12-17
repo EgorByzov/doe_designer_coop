@@ -24,20 +24,4 @@ def bspline_v2(x: torch.Tensor, jmax, d, t):
                 cur_f[:, j] += rightc * last_f[:, j + 1]
 
     f = cur_f[:, :jmax]
-    df = None
-    # if d > 0:
-    #     df = x.new_zeros(x.numel(), jmax)
-    #     for j in range(jmax):
-    #         if t[j + d + 1] == t[j]:
-    #             df[:, j] = torch.zeros_like(x)
-    #         elif t[j] < t[j + d] and t[j + 1] == t[j + 1 + d]:
-    #             df[:, j] = last_f[:, j] / (t[j + d] - t[j])
-    #         elif t[j] == t[j + d] and t[j + 1] < t[j + 1 + d]:
-    #             df[:, j] = -last_f[:, j + 1] / (t[j + 1 + d] - t[j + 1])
-    #         else:
-    #             tmp1 = last_f[:, j] / (t[j + d] - t[j])
-    #             tmp2 = -last_f[:, j + 1] / (t[j + d + 1] - t[j + 1])
-    #             df[:, j] = tmp1 + tmp2
-    #     df = d * df
-
-    return f, df
+    return f
